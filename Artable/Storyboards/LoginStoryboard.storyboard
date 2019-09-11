@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="VM4-dZ-G4U">
             <objects>
-                <viewController id="wL7-gy-0Qb" sceneMemberID="viewController">
+                <viewController id="wL7-gy-0Qb" customClass="LoginVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2e1-Ds-rpJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_left1" translatesAutoresizingMaskIntoConstraints="NO" id="Bv3-j3-pK7">
-                                <rect key="frame" x="0.0" y="88" width="414.00000000000045" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h8N-AY-xoj">
                                 <rect key="frame" x="20" y="108" width="374" height="377.5"/>
@@ -54,8 +54,11 @@
                                         <state key="normal" title="Forgot Password">
                                             <color key="titleColor" red="0.83529411764705885" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgotPassBtnClicked:" destination="wL7-gy-0Qb" eventType="touchUpInside" id="Wkk-s5-dPg"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM6-bG-mGD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM6-bG-mGD" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="217.5" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.22745098039215686" green="0.26666666666666666" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -66,8 +69,11 @@
                                             <color key="titleColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginCLicked:" destination="wL7-gy-0Qb" eventType="touchUpInside" id="CMQ-5S-XmJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgU-eP-Q7a">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgU-eP-Q7a" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="277.5" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -81,7 +87,7 @@
                                             <segue destination="gTw-gp-eRi" kind="show" id="NPs-Ro-95o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1II-xs-lWY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1II-xs-lWY" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="337.5" width="374" height="40"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -91,6 +97,9 @@
                                         <state key="normal" title="Continue as Guest">
                                             <color key="titleColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="guestClicked:" destination="wL7-gy-0Qb" eventType="touchUpInside" id="C3C-Ql-pfI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -114,15 +123,18 @@
                         <viewLayoutGuide key="safeArea" id="cle-bi-9Zp"/>
                     </view>
                     <navigationItem key="navigationItem" id="oJK-X7-grL"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="3Cy-Sy-Tjj" id="TOf-Zm-lUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKi-ji-U7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="779.71014492753625" y="207.58928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--RegisterVC-->
         <scene sceneID="GNV-Jh-igt">
             <objects>
-                <viewController id="gTw-gp-eRi" sceneMemberID="viewController">
+                <viewController id="gTw-gp-eRi" customClass="RegisterVC" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7n5-vw-Gg1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,6 +159,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="usernameText:" destination="5sA-wB-m9z" eventType="editingDidEnd" id="Jhz-7t-kQD"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJk-Ab-RId">
                                         <rect key="frame" x="0.0" y="102.5" width="374" height="40"/>
@@ -175,7 +190,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tz-cj-bPP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tz-cj-bPP" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="282.5" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -185,6 +200,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerClicked:" destination="gTw-gp-eRi" eventType="touchUpInside" id="ss7-tP-J4b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -192,14 +210,14 @@
                                 <rect key="frame" x="188.5" y="442.5" width="37" height="37"/>
                                 <color key="color" red="0.26958135430000002" green="0.25375110779999999" blue="0.30001214380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_check" translatesAutoresizingMaskIntoConstraints="NO" id="DFm-5z-sTo">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_check" translatesAutoresizingMaskIntoConstraints="NO" id="DFm-5z-sTo">
                                 <rect key="frame" x="360" y="275.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="iZg-up-LcW"/>
                                     <constraint firstAttribute="width" constant="30" id="sz8-Jg-Khk"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_check" translatesAutoresizingMaskIntoConstraints="NO" id="zXU-xt-Hia">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_check" translatesAutoresizingMaskIntoConstraints="NO" id="zXU-xt-Hia">
                                 <rect key="frame" x="360" y="335.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5ED-Cp-BEf"/>
@@ -225,8 +243,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s7Y-Ts-Rhr"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="KBt-ey-XHE" id="B7l-S4-0O0"/>
+                        <outlet property="confirmPassCheckImg" destination="zXU-xt-Hia" id="cBY-2k-y8b"/>
+                        <outlet property="confirmPassTxt" destination="prA-nK-cFa" id="5XS-Xd-hsv"/>
+                        <outlet property="emailTxt" destination="nJk-Ab-RId" id="Vrn-uy-xdC"/>
+                        <outlet property="passCheckImg" destination="DFm-5z-sTo" id="j1i-mW-mFN"/>
+                        <outlet property="passwordTxt" destination="MK5-oN-uS1" id="Wuu-se-mai"/>
+                        <outlet property="usernameTxt" destination="JSf-mN-ScG" id="ppp-75-qj9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Eo-9Z-78J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5sA-wB-m9z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1550.7246376811595" y="207.58928571428569"/>
         </scene>
